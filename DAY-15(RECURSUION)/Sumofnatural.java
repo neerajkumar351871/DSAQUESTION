@@ -3,7 +3,7 @@ class Sumofnatural
 {
     if(n==0)
     {
-        return 0;
+        return 0;       
     }
     int no= sumofnumber(n-1);
     int sum=n+sumofnumber(n-1);

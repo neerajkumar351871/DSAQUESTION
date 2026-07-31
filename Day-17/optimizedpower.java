@@ -15,17 +15,18 @@ class optimizedpower {
         }
         return powers;
     }
-    public static int ispowers(int base, int power) {
+    // optimze code.
+    public static double ispowers(int x, int n) {
         // BASE CASE.
-        if (power == 0) {
+        if (n == 0) {
             return 1;
         }
         //kaam
-         int powerS=ispower(base, power / 2);
-        int powers =powerS*powerS ;
+         double powerS=(double)ispower(x, n / 2);
+        double powers =powerS*powerS ;
         // value is odd
-        if (power % 2 != 0) {
-            powers = base * powers;
+        if ((double)n % 2 != 0 ) {
+            powers = x * powers;
         }
         return powers;
     }
@@ -33,7 +34,10 @@ class optimizedpower {
 
     public static void main(String args[]) {
         int base = 2;
-        int power = 9;
-        System.out.println(ispower(base, power));
+        int power = -2;
+        char a='a';
+        char b='b';
+        System.out.println(b-a);
+        System.out.println(ispowers(base, power));
     }
 }

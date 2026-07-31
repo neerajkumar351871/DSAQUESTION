@@ -10,7 +10,7 @@ class mergeSort {
 
     public static void Mergesort(int array[], int si, int ei) {
         // BASE CASE.
-        if (si >= ei) {
+        if (si == ei) {
             return;
         }
         // kaam
