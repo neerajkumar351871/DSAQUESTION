@@ -1,29 +1,35 @@
-import  java.util.HashMap;
-public class DissappreadArray {
+import java.util.*;
+ class DissappreadArray {
 
-    public static void DissappreadArrays(int[] nums) 
-    {
-     // make HaspMap.
-     HashMap<Integer,Boolean> maps= new HashMap<>();
-     for(int i=0;i<nums.length;i++)
-     {
-        for(int j=1;j<nums.length;j++)
-        {
-            if(nums[i]==nums[j])
-            {
-                maps.put(nums[j],true);
-              break;
-            }
-            
-    
+    public  static List<Integer> findDisappearedNumbers(int[] nums) {
+
+        HashMap<Integer, Boolean> tracker = new HashMap<>();
+
+        // Store 1 to n
+        for (int i = 1; i <= nums.length; i++) {
+            tracker.put(i, false);
         }
-        
-     }
-     System.out.print(maps);
+
+        // Mark present numbers
+        for (int i = 0; i < nums.length; i++) {
+            tracker.put(nums[i], true);
+        }
+
+        // Find missing numbers
+        List<Integer> ans = new ArrayList<>();
+
+        for (int i = 1; i <= nums.length; i++) {
+            if (tracker.get(i) == false) {
+                ans.add(i);
+            }
+        }
+
+        return ans;
     }
 
+
     public static void main(String args[]) {
-        int[] nums = {4, 3, 2, 7, 8, 2, 3, 1};
-        DissappreadArrays(nums);
+        int nums[] = {4, 3, 2, 7, 8, 2, 3, 1};
+      System.out.println(findDisappearedNumbers(nums));
     }
 }
